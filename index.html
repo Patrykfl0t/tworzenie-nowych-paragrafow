@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>tworzenie elementow</h1>
+        </header>
+        <main>
+            <button>dodaj element</button>
+        </main>
+    </div>
+    <script>
+        const display = document.querySelector('main');
+        const btn = document.querySelector('button');
+
+        let i=1
+
+        btn.addEventListener('click', function () {
+            const usertext = prompt('podaj tekst do nowego paragrafu');
+            if (usertext) {
+                const par = document.createElement('p');
+                par.innerText = `nowy paragraf nr ${i}: ${usertext}`;
+                par.addEventListener('click', function(){
+                    this.remove()
+            })
+
+            display.append(par);
+            i++
+
+            }
+        })
+    </script>
+</body>
+</html>
